@@ -50,7 +50,6 @@ test('create a new event', function(assert) {
     assert.equal(currentPath(), 'events.new');
 
     fillIn('label:contains(Type) input', 'MyString');
-    fillIn('label:contains(String) input', 'MyString');
     fillIn('label:contains(Starttime) input', new Date());
     fillIn('label:contains(Endtime) input', new Date());
     fillIn('label:contains(Location) input', 'MyString');
@@ -81,7 +80,6 @@ test('update an existing event', function(assert) {
     assert.equal(currentPath(), 'events.edit');
 
     fillIn('label:contains(Type) input', 'MyString');
-    fillIn('label:contains(String) input', 'MyString');
     fillIn('label:contains(Starttime) input', new Date());
     fillIn('label:contains(Endtime) input', new Date());
     fillIn('label:contains(Location) input', 'MyString');
@@ -112,7 +110,6 @@ test('show an existing event', function(assert) {
     assert.equal(currentPath(), 'events.show');
 
     assert.equal(find('p strong:contains(Type:)').next().text(), 'MyString');
-    assert.equal(find('p strong:contains(String:)').next().text(), 'MyString');
     assert.equal(find('p strong:contains(Starttime:)').next().text(), new Date());
     assert.equal(find('p strong:contains(Endtime:)').next().text(), new Date());
     assert.equal(find('p strong:contains(Location:)').next().text(), 'MyString');

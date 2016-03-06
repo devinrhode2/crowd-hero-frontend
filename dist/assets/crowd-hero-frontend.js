@@ -1101,7 +1101,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Type\n      ");
+        var el4 = dom.createTextNode("\n      Type ('corp' or 'np')\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);

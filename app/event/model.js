@@ -1,8 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  type: DS.attr(),
-  string: DS.attr(),
+  type: DS.attr('string'),
   startTime: DS.attr('date'),
   endTime: DS.attr('date'),
   location: DS.attr('string'),
