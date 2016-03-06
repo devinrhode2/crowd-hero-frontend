@@ -10,10 +10,19 @@ const Router = Ember.Router.extend({
 
 /signup (individual or org)
 
+Most important page for company: Dashboard/report
+/org/show/:id
+
+
 /users (list)
 /individuals (list)
 /orgs (list)
-/org/show/:id
+/contributions (list)
+/events (list)
+
+..../new
+..../:id/edit
+..../:id
 
 */
 
