@@ -4,6 +4,19 @@
       <li class="menu-text">
         {{#link-to 'index' style="color:#222" class="black"}}Crowd Hero{{/link-to}}
       </li>
+      <li class="menu-text">
+        {{#link-to 'orgs'}}Companies & Non-Profits{{/link-to}}
+      </li>
+      <li class="menu-text">
+        {{#link-to 'events'}}Events{{/link-to}}
+      </li>
+      <li class="menu-text">
+        {{#link-to 'individuals'}}Individuals{{/link-to}}
+      </li>
+      <li class="menu-text">
+        {{#link-to 'contributions'}}All Contributions{{/link-to}}
+      </li>
+
       {{#if session.isAuthenticated}}
         <li class="menu-text">
           Register this device

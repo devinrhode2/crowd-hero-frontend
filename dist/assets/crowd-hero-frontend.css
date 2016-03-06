@@ -3218,6 +3218,9 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar-right {
   float: right; }
 
+.black {
+  color: black; }
+
 html {
   padding-bottom: 20px; }
 

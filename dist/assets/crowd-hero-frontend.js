@@ -5138,11 +5138,155 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
           "loc": {
             "source": null,
             "start": {
-              "line": 7,
+              "line": 8,
+              "column": 8
+            },
+            "end": {
+              "line": 8,
+              "column": 50
+            }
+          },
+          "moduleName": "crowd-hero-frontend/templates/application.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("Companies & Non-Profits");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child2 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 11,
+              "column": 8
+            },
+            "end": {
+              "line": 11,
+              "column": 35
+            }
+          },
+          "moduleName": "crowd-hero-frontend/templates/application.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("Events");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child3 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 14,
+              "column": 8
+            },
+            "end": {
+              "line": 14,
+              "column": 45
+            }
+          },
+          "moduleName": "crowd-hero-frontend/templates/application.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("Individuals");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child4 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 17,
+              "column": 8
+            },
+            "end": {
+              "line": 17,
+              "column": 53
+            }
+          },
+          "moduleName": "crowd-hero-frontend/templates/application.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("All Contributions");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child5 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 20,
               "column": 6
             },
             "end": {
-              "line": 12,
+              "line": 25,
               "column": 6
             }
           },
@@ -5177,12 +5321,12 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [3]), 0, 0);
           return morphs;
         },
-        statements: [["inline", "link-to", ["Set user for device", "associate-user"], [], ["loc", [null, [11, 30], [11, 80]]]]],
+        statements: [["inline", "link-to", ["Set user for device", "associate-user"], [], ["loc", [null, [24, 30], [24, 80]]]]],
         locals: [],
         templates: []
       };
     })();
-    var child2 = (function () {
+    var child6 = (function () {
       return {
         meta: {
           "fragmentReason": false,
@@ -5190,11 +5334,11 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
           "loc": {
             "source": null,
             "start": {
-              "line": 18,
+              "line": 31,
               "column": 8
             },
             "end": {
-              "line": 20,
+              "line": 33,
               "column": 8
             }
           },
@@ -5224,12 +5368,12 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
           morphs[0] = dom.createElementMorph(element0);
           return morphs;
         },
-        statements: [["element", "action", ["invalidateSession"], [], ["loc", [null, [19, 47], [19, 77]]]]],
+        statements: [["element", "action", ["invalidateSession"], [], ["loc", [null, [32, 47], [32, 77]]]]],
         locals: [],
         templates: []
       };
     })();
-    var child3 = (function () {
+    var child7 = (function () {
       return {
         meta: {
           "fragmentReason": false,
@@ -5237,11 +5381,11 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
           "loc": {
             "source": null,
             "start": {
-              "line": 20,
+              "line": 33,
               "column": 8
             },
             "end": {
-              "line": 22,
+              "line": 35,
               "column": 8
             }
           },
@@ -5277,7 +5421,7 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 54,
+            "line": 67,
             "column": 0
           }
         },
@@ -5310,7 +5454,51 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
         var el5 = dom.createTextNode("\n      ");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n");
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("li");
+        dom.setAttribute(el4, "class", "menu-text");
+        var el5 = dom.createTextNode("\n        ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("li");
+        dom.setAttribute(el4, "class", "menu-text");
+        var el5 = dom.createTextNode("\n        ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("li");
+        dom.setAttribute(el4, "class", "menu-text");
+        var el5 = dom.createTextNode("\n        ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("li");
+        dom.setAttribute(el4, "class", "menu-text");
+        var el5 = dom.createTextNode("\n        ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n\n");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -5361,16 +5549,20 @@ define("crowd-hero-frontend/templates/application", ["exports"], function (expor
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element1 = dom.childAt(fragment, [0]);
         var element2 = dom.childAt(element1, [1, 1]);
-        var morphs = new Array(4);
+        var morphs = new Array(8);
         morphs[0] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
-        morphs[1] = dom.createMorphAt(element2, 3, 3);
-        morphs[2] = dom.createMorphAt(dom.childAt(element1, [3, 1, 1]), 1, 1);
-        morphs[3] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[1] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
+        morphs[2] = dom.createMorphAt(dom.childAt(element2, [5]), 1, 1);
+        morphs[3] = dom.createMorphAt(dom.childAt(element2, [7]), 1, 1);
+        morphs[4] = dom.createMorphAt(dom.childAt(element2, [9]), 1, 1);
+        morphs[5] = dom.createMorphAt(element2, 11, 11);
+        morphs[6] = dom.createMorphAt(dom.childAt(element1, [3, 1, 1]), 1, 1);
+        morphs[7] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["index"], ["style", "color:#222", "class", "black"], 0, null, ["loc", [null, [5, 8], [5, 83]]]], ["block", "if", [["get", "session.isAuthenticated", ["loc", [null, [7, 12], [7, 35]]]]], [], 1, null, ["loc", [null, [7, 6], [12, 13]]]], ["block", "if", [["get", "session.isAuthenticated", ["loc", [null, [18, 14], [18, 37]]]]], [], 2, 3, ["loc", [null, [18, 8], [22, 15]]]], ["content", "outlet", ["loc", [null, [53, 0], [53, 10]]]]],
+      statements: [["block", "link-to", ["index"], ["style", "color:#222", "class", "black"], 0, null, ["loc", [null, [5, 8], [5, 83]]]], ["block", "link-to", ["orgs"], [], 1, null, ["loc", [null, [8, 8], [8, 62]]]], ["block", "link-to", ["events"], [], 2, null, ["loc", [null, [11, 8], [11, 47]]]], ["block", "link-to", ["individuals"], [], 3, null, ["loc", [null, [14, 8], [14, 57]]]], ["block", "link-to", ["contributions"], [], 4, null, ["loc", [null, [17, 8], [17, 65]]]], ["block", "if", [["get", "session.isAuthenticated", ["loc", [null, [20, 12], [20, 35]]]]], [], 5, null, ["loc", [null, [20, 6], [25, 13]]]], ["block", "if", [["get", "session.isAuthenticated", ["loc", [null, [31, 14], [31, 37]]]]], [], 6, 7, ["loc", [null, [31, 8], [35, 15]]]], ["content", "outlet", ["loc", [null, [66, 0], [66, 10]]]]],
       locals: [],
-      templates: [child0, child1, child2, child3]
+      templates: [child0, child1, child2, child3, child4, child5, child6, child7]
     };
   })());
 });
@@ -6388,7 +6580,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+8dbaa4ef"});
+  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+2edf46a2"});
 }
 
 /* jshint ignore:end */

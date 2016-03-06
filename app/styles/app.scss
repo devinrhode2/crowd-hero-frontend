@@ -2,6 +2,9 @@
 @import 'foundation';
 @include foundation-everything;
 
+.black {
+  color: black;
+}
 
 html {
   padding-bottom: 20px;
