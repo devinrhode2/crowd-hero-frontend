@@ -4,16 +4,16 @@ import Ember from 'ember';
 export default DS.Transform.extend({
   deserialize: function(value) {
     if (Ember.isArray(value)) {
-      return Em.A(value);
+      return Ember.A(value);
     } else {
-      return Em.A();
+      return Ember.A();
     }
   },
   serialize: function(value) {
     if (Ember.isArray(value)) {
-      return Em.A(value);
+      return Ember.A(value);
     } else {
-      return Em.A();
+      return Ember.A();
     }
   }
 });
