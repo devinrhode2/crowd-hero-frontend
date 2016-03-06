@@ -1,0 +1,47 @@
+<form {{action "save" on="submit"}}>
+  <div>
+    <label>
+      Type
+      {{input type="text" value=model.type}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Contributor
+      {{input type="text" value=model.contributor}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Causes
+      {{input type="text" value=model.causes}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Event
+      {{input type="text" value=model.event}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Donationamount
+      {{input type="text" value=model.donationAmount}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Hours
+      {{input type="text" value=model.hours}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Skilled
+      {{input type="text" value=model.skilled}}
+    </label>
+  </div>
+  <div>
+    <input type="submit" value="Save">
+  </div>
+</form>

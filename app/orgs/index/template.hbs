@@ -1,0 +1,102 @@
+<h1>Orgs list</h1>
+
+<p>
+  {{link-to "New Org" "orgs.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Type
+        </th>
+        <th>
+          Members
+        </th>
+        <th>
+          Partners
+        </th>
+        <th>
+          Locations
+        </th>
+        <th>
+          Causes
+        </th>
+        <th>
+          Contributions
+        </th>
+        <th>
+          Industries
+        </th>
+        <th>
+          Receivedcontributions
+        </th>
+        <th>
+          Skills
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |org|}}
+        <tr>
+          <td>
+            {{org.type}}
+          </td>
+          <td>
+            {{org.members}}
+          </td>
+          <td>
+            {{org.partners}}
+          </td>
+          <td>
+            {{org.locations}}
+          </td>
+          <td>
+            {{org.causes}}
+          </td>
+          <td>
+            {{org.contributions}}
+          </td>
+          <td>
+            {{org.industries}}
+          </td>
+          <td>
+            {{org.receivedContributions}}
+          </td>
+          <td>
+            {{org.skills}}
+          </td>
+          <td>
+            {{org.name}}
+          </td>
+          <td>
+            {{org.email}}
+          </td>
+          <td>
+            {{link-to "Edit" "orgs.edit" org}}
+          </td>
+          <td>
+            {{link-to "Show" "orgs.show" org}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" org}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Orgs found
+  </p>
+{{/if}}

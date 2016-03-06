@@ -1,3 +1,53 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu">
+      <li class="menu-text">
+        {{#link-to 'index' style="color:#222" class="black"}}Crowd Hero{{/link-to}}
+      </li>
+      {{#if session.isAuthenticated}}
+        <li class="menu-text">
+          Register this device
+        </li>
+        <li class="menu-text">{{link-to 'Set user for device' 'associate-user'}}</li>
+      {{/if}}
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu">
+      <li class="menu-text">
+        {{#if session.isAuthenticated}}
+          <button type="button" class="button" {{action 'invalidateSession'}}>Sign out</button>
+        {{else}}
+          {{!-- {{#link-to 'signin' class="button"}}Sign in{{/link-to}} --}}
+        {{/if}}
+      </li>
+    </ul>
+  {{!--   {{#liquid-bind account_id use="fade" as |account_id|}}
+      account id: {{account_id}}
+    {{/liquid-bind}}
+    {{#liquid-bind device_id use="fade" as |device_id|}}
+      device_id: {{device_id}}
+    {{/liquid-bind}}
+    {{#liquid-bind user_id use="fade" as |user_id|}}
+      user_id: {{user_id}}
+    {{/liquid-bind}}
+    {{#liquid-bind device_name use="fade" as |device_name|}}
+      device_name: {{device_name}}
+    {{/liquid-bind}}
+    <style>
+      .liquid-bind-demo {
+          .liquid-container {
+            display: inline-block;
+          }
+          .liquid-child {
+            display: inline-block;
+            /* This prevents a slight horizontal wobble in firefox. */
+            width: 1.5em;
+          }
+      }
+    </style>
+ --}}
+  </div>
+</div>
 
 {{outlet}}

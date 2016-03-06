@@ -1,0 +1,78 @@
+<h1>Contributions list</h1>
+
+<p>
+  {{link-to "New Contribution" "contributions.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Type
+        </th>
+        <th>
+          Contributor
+        </th>
+        <th>
+          Causes
+        </th>
+        <th>
+          Event
+        </th>
+        <th>
+          Donationamount
+        </th>
+        <th>
+          Hours
+        </th>
+        <th>
+          Skilled
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |contribution|}}
+        <tr>
+          <td>
+            {{contribution.type}}
+          </td>
+          <td>
+            {{contribution.contributor}}
+          </td>
+          <td>
+            {{contribution.causes}}
+          </td>
+          <td>
+            {{contribution.event}}
+          </td>
+          <td>
+            {{contribution.donationAmount}}
+          </td>
+          <td>
+            {{contribution.hours}}
+          </td>
+          <td>
+            {{contribution.skilled}}
+          </td>
+          <td>
+            {{link-to "Edit" "contributions.edit" contribution}}
+          </td>
+          <td>
+            {{link-to "Show" "contributions.show" contribution}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" contribution}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Contributions found
+  </p>
+{{/if}}

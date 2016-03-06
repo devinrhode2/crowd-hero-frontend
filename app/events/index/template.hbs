@@ -1,0 +1,114 @@
+<h1>Events list</h1>
+
+<p>
+  {{link-to "New Event" "events.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Type
+        </th>
+        <th>
+          String
+        </th>
+        <th>
+          Starttime
+        </th>
+        <th>
+          Endtime
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          Organizer
+        </th>
+        <th>
+          Causes
+        </th>
+        <th>
+          Contributors
+        </th>
+        <th>
+          Beneficiary
+        </th>
+        <th>
+          Eventimagesrc
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Expectedvolunteers
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |event|}}
+        <tr>
+          <td>
+            {{event.type}}
+          </td>
+          <td>
+            {{event.string}}
+          </td>
+          <td>
+            {{event.startTime}}
+          </td>
+          <td>
+            {{event.endTime}}
+          </td>
+          <td>
+            {{event.location}}
+          </td>
+          <td>
+            {{event.organizer}}
+          </td>
+          <td>
+            {{event.causes}}
+          </td>
+          <td>
+            {{event.contributors}}
+          </td>
+          <td>
+            {{event.beneficiary}}
+          </td>
+          <td>
+            {{event.eventImageSrc}}
+          </td>
+          <td>
+            {{event.description}}
+          </td>
+          <td>
+            {{event.name}}
+          </td>
+          <td>
+            {{event.expectedVolunteers}}
+          </td>
+          <td>
+            {{link-to "Edit" "events.edit" event}}
+          </td>
+          <td>
+            {{link-to "Show" "events.show" event}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" event}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Events found
+  </p>
+{{/if}}

@@ -1,0 +1,96 @@
+<h1>Individuals list</h1>
+
+<p>
+  {{link-to "New Individual" "individuals.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Org
+        </th>
+        <th>
+          Hourlyrate
+        </th>
+        <th>
+          Locations
+        </th>
+        <th>
+          Causes
+        </th>
+        <th>
+          Contributions
+        </th>
+        <th>
+          Industries
+        </th>
+        <th>
+          Receivedcontributions
+        </th>
+        <th>
+          Skills
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |individual|}}
+        <tr>
+          <td>
+            {{individual.org}}
+          </td>
+          <td>
+            {{individual.hourlyRate}}
+          </td>
+          <td>
+            {{individual.locations}}
+          </td>
+          <td>
+            {{individual.causes}}
+          </td>
+          <td>
+            {{individual.contributions}}
+          </td>
+          <td>
+            {{individual.industries}}
+          </td>
+          <td>
+            {{individual.receivedContributions}}
+          </td>
+          <td>
+            {{individual.skills}}
+          </td>
+          <td>
+            {{individual.name}}
+          </td>
+          <td>
+            {{individual.email}}
+          </td>
+          <td>
+            {{link-to "Edit" "individuals.edit" individual}}
+          </td>
+          <td>
+            {{link-to "Show" "individuals.show" individual}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" individual}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Individuals found
+  </p>
+{{/if}}

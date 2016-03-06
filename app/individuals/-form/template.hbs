@@ -1,0 +1,72 @@
+<form {{action "save" on="submit"}}>
+
+  <div>
+    <label>
+      Name
+      {{input type="text" value=model.name}}
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Skills
+      {{input type="text" value=model.skills}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Email
+      {{input type="text" value=model.email}}
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Hourly rate for estimating value of voluntary skilled labor
+      {{input type="text" value=model.hourlyRate}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Location(s){{!-- FAIL:comma separated list of city, state, city, state? lol --}}
+      {{input type="text" value=model.locations}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Causes
+      {{input type="text" value=model.causes}}
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Industries
+      {{input type="text" value=model.industries}}
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Organization you are apart of (optional)
+      {{input type="text" value='Search for you company' disabled="disabled"}}
+    </label>
+  </div>
+
+  <div>
+    <input type="submit" value="Save">
+  </div>
+
+{{!--   <div>
+    <label>
+      Contributions
+      {{input type="text" value=model.contributions}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Received contributions
+      {{input type="text" value=model.receivedContributions}}
+    </label>
+  </div> --}}
+</form>

@@ -1,0 +1,11 @@
+@import "settings";
+@import 'foundation';
+@include foundation-everything;
+
+
+html {
+  padding-bottom: 20px;
+}
+body {
+  margin: 2%;
+}
