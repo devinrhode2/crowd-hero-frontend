@@ -1,6 +1,12 @@
 <form {{action "save" on="submit"}}>
   <div>
     <label>
+      Name
+      {{input type="text" value=model.name}}
+    </label>
+  </div>
+  <div>
+    <label>
       Type 'corp' or 'np' (non-profit)
       {{input type="text" value=model.type}}
     </label>
@@ -50,7 +56,7 @@
   </div>
   <div>
     <label>
-      Eventimagesrc
+      Event image url
       {{input type="text" value=model.eventImageSrc}}
     </label>
   </div>
@@ -58,12 +64,6 @@
     <label>
       Description
       {{input type="text" value=model.description}}
-    </label>
-  </div>
-  <div>
-    <label>
-      Name
-      {{input type="text" value=model.name}}
     </label>
   </div>
   <div>
