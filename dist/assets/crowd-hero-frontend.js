@@ -22,6 +22,14 @@ define('crowd-hero-frontend/app', ['exports', 'ember', 'crowd-hero-frontend/reso
 
   exports['default'] = App;
 });
+define('crowd-hero-frontend/blueprints/ember-cli-pickadate', ['exports', 'ember-cli-pickadate/blueprints/ember-cli-pickadate'], function (exports, _emberCliPickadateBlueprintsEmberCliPickadate) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberCliPickadateBlueprintsEmberCliPickadate['default'];
+    }
+  });
+});
 define('crowd-hero-frontend/components/app-version', ['exports', 'ember-cli-app-version/components/app-version', 'crowd-hero-frontend/config/environment'], function (exports, _emberCliAppVersionComponentsAppVersion, _crowdHeroFrontendConfigEnvironment) {
 
   var name = _crowdHeroFrontendConfigEnvironment['default'].APP.name;
@@ -30,6 +38,22 @@ define('crowd-hero-frontend/components/app-version', ['exports', 'ember-cli-app-
   exports['default'] = _emberCliAppVersionComponentsAppVersion['default'].extend({
     version: version,
     name: name
+  });
+});
+define('crowd-hero-frontend/components/pick-a-date', ['exports', 'ember-cli-pickadate/components/pick-a-date'], function (exports, _emberCliPickadateComponentsPickADate) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberCliPickadateComponentsPickADate['default'];
+    }
+  });
+});
+define('crowd-hero-frontend/components/pick-a-time', ['exports', 'ember-cli-pickadate/components/pick-a-time'], function (exports, _emberCliPickadateComponentsPickATime) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberCliPickadateComponentsPickATime['default'];
+    }
   });
 });
 define('crowd-hero-frontend/components/zf-accordion-menu', ['exports', 'ember-cli-foundation-6-sass/components/zf-accordion-menu'], function (exports, _emberCliFoundation6SassComponentsZfAccordionMenu) {
@@ -1051,8 +1075,7 @@ define('crowd-hero-frontend/event/adapter', ['exports', 'ember-data'], function 
 });
 define('crowd-hero-frontend/event/model', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
-    type: _emberData['default'].attr(),
-    string: _emberData['default'].attr(),
+    type: _emberData['default'].attr('string'),
     startTime: _emberData['default'].attr('date'),
     endTime: _emberData['default'].attr('date'),
     location: _emberData['default'].attr('string'),
@@ -1082,7 +1105,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 84,
+            "line": 79,
             "column": 0
           }
         },
@@ -1101,7 +1124,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Type ('corp' or 'np')\n      ");
+        var el4 = dom.createTextNode("\n      Name\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1117,7 +1140,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      String\n      ");
+        var el4 = dom.createTextNode("\n      Type 'corp' or 'np' (non-profit)\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1133,11 +1156,11 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Starttime\n      ");
+        var el4 = dom.createTextNode("\n      Start date\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
+        var el4 = dom.createTextNode("\n\n    ");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n  ");
@@ -1149,7 +1172,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Endtime\n      ");
+        var el4 = dom.createTextNode("\n      End date\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1245,7 +1268,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Eventimagesrc\n      ");
+        var el4 = dom.createTextNode("\n      Event image url\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1277,23 +1300,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Name\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("div");
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Expectedvolunteers\n      ");
+        var el4 = dom.createTextNode("\n      Expected Volunteers\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1324,7 +1331,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0]);
-        var morphs = new Array(14);
+        var morphs = new Array(13);
         morphs[0] = dom.createElementMorph(element0);
         morphs[1] = dom.createMorphAt(dom.childAt(element0, [1, 1]), 1, 1);
         morphs[2] = dom.createMorphAt(dom.childAt(element0, [3, 1]), 1, 1);
@@ -1338,10 +1345,9 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         morphs[10] = dom.createMorphAt(dom.childAt(element0, [19, 1]), 1, 1);
         morphs[11] = dom.createMorphAt(dom.childAt(element0, [21, 1]), 1, 1);
         morphs[12] = dom.createMorphAt(dom.childAt(element0, [23, 1]), 1, 1);
-        morphs[13] = dom.createMorphAt(dom.childAt(element0, [25, 1]), 1, 1);
         return morphs;
       },
-      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.string", ["loc", [null, [11, 32], [11, 44]]]]], [], []]], ["loc", [null, [11, 6], [11, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.startTime", ["loc", [null, [17, 32], [17, 47]]]]], [], []]], ["loc", [null, [17, 6], [17, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.endTime", ["loc", [null, [23, 32], [23, 45]]]]], [], []]], ["loc", [null, [23, 6], [23, 47]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.location", ["loc", [null, [29, 32], [29, 46]]]]], [], []]], ["loc", [null, [29, 6], [29, 48]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.organizer", ["loc", [null, [35, 32], [35, 47]]]]], [], []]], ["loc", [null, [35, 6], [35, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [41, 32], [41, 44]]]]], [], []]], ["loc", [null, [41, 6], [41, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.contributors", ["loc", [null, [47, 32], [47, 50]]]]], [], []]], ["loc", [null, [47, 6], [47, 52]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.beneficiary", ["loc", [null, [53, 32], [53, 49]]]]], [], []]], ["loc", [null, [53, 6], [53, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.eventImageSrc", ["loc", [null, [59, 32], [59, 51]]]]], [], []]], ["loc", [null, [59, 6], [59, 53]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.description", ["loc", [null, [65, 32], [65, 49]]]]], [], []]], ["loc", [null, [65, 6], [65, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [71, 32], [71, 42]]]]], [], []]], ["loc", [null, [71, 6], [71, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.expectedVolunteers", ["loc", [null, [77, 32], [77, 56]]]]], [], []]], ["loc", [null, [77, 6], [77, 58]]]]],
+      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [11, 32], [11, 42]]]]], [], []]], ["loc", [null, [11, 6], [11, 44]]]], ["inline", "pick-a-date", [], ["date", ["subexpr", "readonly", [["get", "date", ["loc", [null, [17, 35], [17, 39]]]]], [], ["loc", [null, [17, 25], [17, 40]]]], "on-selected", ["subexpr", "action", [["subexpr", "mut", [["get", "date", ["loc", [null, [17, 66], [17, 70]]]]], [], ["loc", [null, [17, 61], [17, 71]]]]], [], ["loc", [null, [17, 53], [17, 72]]]], "placeholder", "Pick a date", "options", ["subexpr", "readonly", [["get", "extraPickadateOptions", ["loc", [null, [17, 117], [17, 138]]]]], [], ["loc", [null, [17, 107], [17, 139]]]], "value", ["subexpr", "@mut", [["get", "model.startDate", ["loc", [null, [17, 146], [17, 161]]]]], [], []]], ["loc", [null, [17, 6], [17, 163]]]], ["inline", "pick-a-date", [], ["date", ["subexpr", "readonly", [["get", "date", ["loc", [null, [24, 35], [24, 39]]]]], [], ["loc", [null, [24, 25], [24, 40]]]], "on-selected", ["subexpr", "action", [["subexpr", "mut", [["get", "date", ["loc", [null, [24, 66], [24, 70]]]]], [], ["loc", [null, [24, 61], [24, 71]]]]], [], ["loc", [null, [24, 53], [24, 72]]]], "placeholder", "Pick a date", "options", ["subexpr", "readonly", [["get", "extraPickadateOptions", ["loc", [null, [24, 117], [24, 138]]]]], [], ["loc", [null, [24, 107], [24, 139]]]], "value", ["subexpr", "@mut", [["get", "model.startDate", ["loc", [null, [24, 146], [24, 161]]]]], [], []]], ["loc", [null, [24, 6], [24, 163]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.location", ["loc", [null, [30, 32], [30, 46]]]]], [], []]], ["loc", [null, [30, 6], [30, 48]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.organizer", ["loc", [null, [36, 32], [36, 47]]]]], [], []]], ["loc", [null, [36, 6], [36, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [42, 32], [42, 44]]]]], [], []]], ["loc", [null, [42, 6], [42, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.contributors", ["loc", [null, [48, 32], [48, 50]]]]], [], []]], ["loc", [null, [48, 6], [48, 52]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.beneficiary", ["loc", [null, [54, 32], [54, 49]]]]], [], []]], ["loc", [null, [54, 6], [54, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.eventImageSrc", ["loc", [null, [60, 32], [60, 51]]]]], [], []]], ["loc", [null, [60, 6], [60, 53]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.description", ["loc", [null, [66, 32], [66, 49]]]]], [], []]], ["loc", [null, [66, 6], [66, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.expectedVolunteers", ["loc", [null, [72, 32], [72, 56]]]]], [], []]], ["loc", [null, [72, 6], [72, 58]]]]],
       locals: [],
       templates: []
     };
@@ -1437,11 +1443,11 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
             "loc": {
               "source": null,
               "start": {
-                "line": 56,
+                "line": 53,
                 "column": 6
               },
               "end": {
-                "line": 107,
+                "line": 101,
                 "column": 6
               }
             },
@@ -1456,16 +1462,6 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
             var el1 = dom.createTextNode("        ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("tr");
-            var el2 = dom.createTextNode("\n          ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
@@ -1628,8 +1624,8 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
             var element0 = dom.childAt(fragment, [1]);
-            var element1 = dom.childAt(element0, [31, 1]);
-            var morphs = new Array(16);
+            var element1 = dom.childAt(element0, [29, 1]);
+            var morphs = new Array(15);
             morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 1, 1);
             morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
             morphs[2] = dom.createMorphAt(dom.childAt(element0, [5]), 1, 1);
@@ -1644,11 +1640,10 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
             morphs[11] = dom.createMorphAt(dom.childAt(element0, [23]), 1, 1);
             morphs[12] = dom.createMorphAt(dom.childAt(element0, [25]), 1, 1);
             morphs[13] = dom.createMorphAt(dom.childAt(element0, [27]), 1, 1);
-            morphs[14] = dom.createMorphAt(dom.childAt(element0, [29]), 1, 1);
-            morphs[15] = dom.createElementMorph(element1);
+            morphs[14] = dom.createElementMorph(element1);
             return morphs;
           },
-          statements: [["content", "event.type", ["loc", [null, [59, 12], [59, 26]]]], ["content", "event.string", ["loc", [null, [62, 12], [62, 28]]]], ["content", "event.startTime", ["loc", [null, [65, 12], [65, 31]]]], ["content", "event.endTime", ["loc", [null, [68, 12], [68, 29]]]], ["content", "event.location", ["loc", [null, [71, 12], [71, 30]]]], ["content", "event.organizer", ["loc", [null, [74, 12], [74, 31]]]], ["content", "event.causes", ["loc", [null, [77, 12], [77, 28]]]], ["content", "event.contributors", ["loc", [null, [80, 12], [80, 34]]]], ["content", "event.beneficiary", ["loc", [null, [83, 12], [83, 33]]]], ["content", "event.eventImageSrc", ["loc", [null, [86, 12], [86, 35]]]], ["content", "event.description", ["loc", [null, [89, 12], [89, 33]]]], ["content", "event.name", ["loc", [null, [92, 12], [92, 26]]]], ["content", "event.expectedVolunteers", ["loc", [null, [95, 12], [95, 40]]]], ["inline", "link-to", ["Edit", "events.edit", ["get", "event", ["loc", [null, [98, 43], [98, 48]]]]], [], ["loc", [null, [98, 12], [98, 50]]]], ["inline", "link-to", ["Show", "events.show", ["get", "event", ["loc", [null, [101, 43], [101, 48]]]]], [], ["loc", [null, [101, 12], [101, 50]]]], ["element", "action", ["remove", ["get", "event", ["loc", [null, [104, 42], [104, 47]]]]], [], ["loc", [null, [104, 24], [104, 49]]]]],
+          statements: [["content", "event.type", ["loc", [null, [56, 12], [56, 26]]]], ["content", "event.startTime", ["loc", [null, [59, 12], [59, 31]]]], ["content", "event.endTime", ["loc", [null, [62, 12], [62, 29]]]], ["content", "event.location", ["loc", [null, [65, 12], [65, 30]]]], ["content", "event.organizer", ["loc", [null, [68, 12], [68, 31]]]], ["content", "event.causes", ["loc", [null, [71, 12], [71, 28]]]], ["content", "event.contributors", ["loc", [null, [74, 12], [74, 34]]]], ["content", "event.beneficiary", ["loc", [null, [77, 12], [77, 33]]]], ["content", "event.eventImageSrc", ["loc", [null, [80, 12], [80, 35]]]], ["content", "event.description", ["loc", [null, [83, 12], [83, 33]]]], ["content", "event.name", ["loc", [null, [86, 12], [86, 26]]]], ["content", "event.expectedVolunteers", ["loc", [null, [89, 12], [89, 40]]]], ["inline", "link-to", ["Edit", "events.edit", ["get", "event", ["loc", [null, [92, 43], [92, 48]]]]], [], ["loc", [null, [92, 12], [92, 50]]]], ["inline", "link-to", ["Show", "events.show", ["get", "event", ["loc", [null, [95, 43], [95, 48]]]]], [], ["loc", [null, [95, 12], [95, 50]]]], ["element", "action", ["remove", ["get", "event", ["loc", [null, [98, 42], [98, 47]]]]], [], ["loc", [null, [98, 24], [98, 49]]]]],
           locals: ["event"],
           templates: []
         };
@@ -1664,7 +1659,7 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
               "column": 0
             },
             "end": {
-              "line": 110,
+              "line": 104,
               "column": 0
             }
           },
@@ -1689,12 +1684,6 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("th");
           var el5 = dom.createTextNode("\n          Type\n        ");
-          dom.appendChild(el4, el5);
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n        ");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createElement("th");
-          var el5 = dom.createTextNode("\n          String\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n        ");
@@ -1798,7 +1787,7 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 1, 1);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model", ["loc", [null, [56, 14], [56, 19]]]]], [], 0, null, ["loc", [null, [56, 6], [107, 15]]]]],
+        statements: [["block", "each", [["get", "model", ["loc", [null, [53, 14], [53, 19]]]]], [], 0, null, ["loc", [null, [53, 6], [101, 15]]]]],
         locals: [],
         templates: [child0]
       };
@@ -1811,11 +1800,11 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
           "loc": {
             "source": null,
             "start": {
-              "line": 110,
+              "line": 104,
               "column": 0
             },
             "end": {
-              "line": 114,
+              "line": 108,
               "column": 0
             }
           },
@@ -1860,7 +1849,7 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 115,
+            "line": 109,
             "column": 0
           }
         },
@@ -1899,7 +1888,7 @@ define("crowd-hero-frontend/events/index/template", ["exports"], function (expor
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["inline", "link-to", ["New Event", "events.new"], [], ["loc", [null, [4, 2], [4, 39]]]], ["block", "if", [["get", "model.length", ["loc", [null, [7, 6], [7, 18]]]]], [], 0, 1, ["loc", [null, [7, 0], [114, 7]]]]],
+      statements: [["inline", "link-to", ["New Event", "events.new"], [], ["loc", [null, [4, 2], [4, 39]]]], ["block", "if", [["get", "model.length", ["loc", [null, [7, 6], [7, 18]]]]], [], 0, 1, ["loc", [null, [7, 0], [108, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -1990,7 +1979,7 @@ define("crowd-hero-frontend/events/show/template", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 72,
+            "line": 67,
             "column": 0
           }
         },
@@ -2023,24 +2012,6 @@ define("crowd-hero-frontend/events/show/template", ["exports"], function (export
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("strong");
         var el3 = dom.createTextNode("Type:");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("strong");
-        var el3 = dom.createTextNode("String:");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
@@ -2255,7 +2226,7 @@ define("crowd-hero-frontend/events/show/template", ["exports"], function (export
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(14);
+        var morphs = new Array(13);
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [4, 3]), 0, 0);
         morphs[2] = dom.createMorphAt(dom.childAt(fragment, [6, 3]), 0, 0);
@@ -2269,10 +2240,9 @@ define("crowd-hero-frontend/events/show/template", ["exports"], function (export
         morphs[10] = dom.createMorphAt(dom.childAt(fragment, [22, 3]), 0, 0);
         morphs[11] = dom.createMorphAt(dom.childAt(fragment, [24, 3]), 0, 0);
         morphs[12] = dom.createMorphAt(dom.childAt(fragment, [26, 3]), 0, 0);
-        morphs[13] = dom.createMorphAt(dom.childAt(fragment, [28, 3]), 0, 0);
         return morphs;
       },
-      statements: [["inline", "link-to", ["Event list", "events.index"], [], ["loc", [null, [2, 2], [2, 42]]]], ["content", "model.type", ["loc", [null, [9, 8], [9, 22]]]], ["content", "model.string", ["loc", [null, [14, 8], [14, 24]]]], ["content", "model.startTime", ["loc", [null, [19, 8], [19, 27]]]], ["content", "model.endTime", ["loc", [null, [24, 8], [24, 25]]]], ["content", "model.location", ["loc", [null, [29, 8], [29, 26]]]], ["content", "model.organizer", ["loc", [null, [34, 8], [34, 27]]]], ["content", "model.causes", ["loc", [null, [39, 8], [39, 24]]]], ["content", "model.contributors", ["loc", [null, [44, 8], [44, 30]]]], ["content", "model.beneficiary", ["loc", [null, [49, 8], [49, 29]]]], ["content", "model.eventImageSrc", ["loc", [null, [54, 8], [54, 31]]]], ["content", "model.description", ["loc", [null, [59, 8], [59, 29]]]], ["content", "model.name", ["loc", [null, [64, 8], [64, 22]]]], ["content", "model.expectedVolunteers", ["loc", [null, [69, 8], [69, 36]]]]],
+      statements: [["inline", "link-to", ["Event list", "events.index"], [], ["loc", [null, [2, 2], [2, 42]]]], ["content", "model.type", ["loc", [null, [9, 8], [9, 22]]]], ["content", "model.startTime", ["loc", [null, [14, 8], [14, 27]]]], ["content", "model.endTime", ["loc", [null, [19, 8], [19, 25]]]], ["content", "model.location", ["loc", [null, [24, 8], [24, 26]]]], ["content", "model.organizer", ["loc", [null, [29, 8], [29, 27]]]], ["content", "model.causes", ["loc", [null, [34, 8], [34, 24]]]], ["content", "model.contributors", ["loc", [null, [39, 8], [39, 30]]]], ["content", "model.beneficiary", ["loc", [null, [44, 8], [44, 29]]]], ["content", "model.eventImageSrc", ["loc", [null, [49, 8], [49, 31]]]], ["content", "model.description", ["loc", [null, [54, 8], [54, 29]]]], ["content", "model.name", ["loc", [null, [59, 8], [59, 22]]]], ["content", "model.expectedVolunteers", ["loc", [null, [64, 8], [64, 36]]]]],
       locals: [],
       templates: []
     };
@@ -2297,11 +2267,11 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 2,
+              "line": 6,
               "column": 0
             },
             "end": {
-              "line": 2,
+              "line": 6,
               "column": 35
             }
           },
@@ -2329,7 +2299,7 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["wrong-type", "multiple-nodes"]
+          "problems": ["multiple-nodes", "wrong-type"]
         },
         "revision": "Ember@2.4.1",
         "loc": {
@@ -2339,7 +2309,7 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 5,
+            "line": 9,
             "column": 0
           }
         },
@@ -2353,6 +2323,18 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h1");
+        var el2 = dom.createTextNode("Welcome to CrowdHero!");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("We are a marketplace for philanthrophy heros to connect and contribute to purposeful causes in the world");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -2365,11 +2347,11 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-        morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
+        morphs[0] = dom.createMorphAt(fragment, 5, 5, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 7, 7, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["events"], [], 0, null, ["loc", [null, [2, 0], [2, 47]]]], ["content", "outlet", ["loc", [null, [4, 0], [4, 10]]]]],
+      statements: [["block", "link-to", ["events"], [], 0, null, ["loc", [null, [6, 0], [6, 47]]]], ["content", "outlet", ["loc", [null, [8, 0], [8, 10]]]]],
       locals: [],
       templates: [child0]
     };
@@ -3744,7 +3726,7 @@ define('crowd-hero-frontend/mirage/factories/contribution', ['exports', 'ember-c
   exports['default'] = _emberCliMirage['default'].Factory.extend({ type: 'MyString', contributor: 'MyString', causes: [], event: 'MyString', donationAmount: 'MyString', hours: 42, skilled: false });
 });
 define('crowd-hero-frontend/mirage/factories/event', ['exports', 'ember-cli-mirage'], function (exports, _emberCliMirage) {
-  exports['default'] = _emberCliMirage['default'].Factory.extend({ type: 'MyString', string: 'MyString', startTime: new Date(), endTime: new Date(), location: 'MyString', organizer: 'MyString', causes: [], contributors: 'MyString', beneficiary: 'MyString', eventImageSrc: 'MyString', description: 'MyString', name: 'MyString', expectedVolunteers: 'MyString' });
+  exports['default'] = _emberCliMirage['default'].Factory.extend({ type: 'MyString', startTime: new Date(), endTime: new Date(), location: 'MyString', organizer: 'MyString', causes: [], contributors: 'MyString', beneficiary: 'MyString', eventImageSrc: 'MyString', description: 'MyString', name: 'MyString', expectedVolunteers: 'MyString' });
 });
 define('crowd-hero-frontend/mirage/factories/individual', ['exports', 'ember-cli-mirage'], function (exports, _emberCliMirage) {
   exports['default'] = _emberCliMirage['default'].Factory.extend({ org: 'MyString', hourlyRate: 42, locations: [], causes: [], contributions: 'MyString', industries: [], receivedContributions: 'MyString', skills: [], name: 'MyString', email: 'MyString' });
@@ -5570,16 +5552,16 @@ define('crowd-hero-frontend/transforms/array', ['exports', 'ember-data', 'ember'
   exports['default'] = _emberData['default'].Transform.extend({
     deserialize: function deserialize(value) {
       if (_ember['default'].isArray(value)) {
-        return Em.A(value);
+        return _ember['default'].A(value);
       } else {
-        return Em.A();
+        return _ember['default'].A();
       }
     },
     serialize: function serialize(value) {
       if (_ember['default'].isArray(value)) {
-        return Em.A(value);
+        return _ember['default'].A(value);
       } else {
-        return Em.A();
+        return _ember['default'].A();
       }
     }
   });
@@ -6580,7 +6562,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+2edf46a2"});
+  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+72398734"});
 }
 
 /* jshint ignore:end */
